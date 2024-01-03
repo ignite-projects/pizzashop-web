@@ -1,3 +1,10 @@
+import { Button } from "@/components/ui/button";
+import "./globals.css";
+
 export function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <div className="h-screen w-full flex items-center justify-center">
+      <Button>Enviar</Button>
+    </div>
+  );
 }
