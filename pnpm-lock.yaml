@@ -12,14 +12,14 @@ dependencies:
     specifier: ^0.7.0
     version: 0.7.0
   clsx:
-    specifier: ^2.0.0
+    specifier: ^2.1.0
     version: 2.1.0
   localforage:
     specifier: ^1.10.0
     version: 1.10.0
   lucide-react:
-    specifier: ^0.295.0
-    version: 0.295.0(react@18.2.0)
+    specifier: ^0.303.0
+    version: 0.303.0(react@18.2.0)
   match-sorter:
     specifier: ^6.3.1
     version: 6.3.1
@@ -29,6 +29,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  react-helmet-async:
+    specifier: ^2.0.4
+    version: 2.0.4(react-dom@18.2.0)(react@18.2.0)
   react-router-dom:
     specifier: ^6.21.0
     version: 6.21.1(react-dom@18.2.0)(react@18.2.0)
@@ -36,7 +39,7 @@ dependencies:
     specifier: ^1.2.0
     version: 1.2.0
   tailwind-merge:
-    specifier: ^2.1.0
+    specifier: ^2.2.0
     version: 2.2.0
   tailwindcss-animate:
     specifier: ^1.0.7
@@ -47,7 +50,7 @@ devDependencies:
     specifier: ^2.1.0
     version: 2.1.0(eslint@8.56.0)(typescript@5.3.3)
   '@types/node':
-    specifier: ^20.10.4
+    specifier: ^20.10.6
     version: 20.10.6
   '@types/react':
     specifier: ^18.2.43
@@ -62,7 +65,7 @@ devDependencies:
     specifier: ^10.4.16
     version: 10.4.16(postcss@8.4.33)
   eslint:
-    specifier: ^8.55.0
+    specifier: ^8.56.0
     version: 8.56.0
   eslint-plugin-simple-import-sort:
     specifier: ^10.0.0
@@ -71,7 +74,7 @@ devDependencies:
     specifier: ^8.4.32
     version: 8.4.33
   tailwindcss:
-    specifier: ^3.3.6
+    specifier: ^3.4.0
     version: 3.4.0
   typescript:
     specifier: ^5.2.2
@@ -2261,6 +2264,12 @@ packages:
       side-channel: 1.0.4
     dev: true
 
+  /invariant@2.2.4:
+    resolution: {integrity: sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==}
+    dependencies:
+      loose-envify: 1.4.0
+    dev: false
+
   /is-array-buffer@3.0.2:
     resolution: {integrity: sha512-y+FyyR/w8vfIRq4eQcM1EYgSTnmHXPqaF+IgzgraytCFq5Xh8lllDVmAZolPJiZttZLeFSINPYMaEJ7/vWUa1w==}
     dependencies:
@@ -2583,8 +2592,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-react@0.295.0(react@18.2.0):
-    resolution: {integrity: sha512-5tQQ8V4Qn9DZscW55OOk9i5z4R0TfJiMjLEwM1P1jqtY5aPD3AnY049Zfb+fyXAa1JcUS5o26Wsl/3dfvTue6w==}
+  /lucide-react@0.303.0(react@18.2.0):
+    resolution: {integrity: sha512-B0B9T3dLEFBYPCUlnUS1mvAhW1craSbF9HO+JfBjAtpFUJ7gMIqmEwNSclikY3RiN2OnCkj/V1ReAQpaHae8Bg==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
@@ -2935,6 +2944,23 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-fast-compare@3.2.2:
+    resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
+    dev: false
+
+  /react-helmet-async@2.0.4(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-yxjQMWposw+akRfvpl5+8xejl4JtUlHnEBcji6u8/e6oc7ozT+P9PNTWMhCbz2y9tc5zPegw2BvKjQA+NwdEjQ==}
+    peerDependencies:
+      react: ^16.6.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      invariant: 2.2.4
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-fast-compare: 3.2.2
+      shallowequal: 1.1.0
+    dev: false
+
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
@@ -3134,6 +3160,10 @@ packages:
       functions-have-names: 1.2.3
       has-property-descriptors: 1.0.1
     dev: true
+
+  /shallowequal@1.1.0:
+    resolution: {integrity: sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==}
+    dev: false
 
   /shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
