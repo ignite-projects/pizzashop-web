@@ -4,7 +4,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { useQuery } from "@tanstack/react-query"
 import { getManagedRestaurant } from "@/api/get-managed-restaurant"
 import { getProfile } from "@/api/get-profile"
-import { Skeleton } from "./ui/skeleten"
+import { Skeleton } from "./ui/skeleton"
 
 export function AccountMenu() {
   const { data: profile, isLoading: isLoadingProfile } = useQuery({
