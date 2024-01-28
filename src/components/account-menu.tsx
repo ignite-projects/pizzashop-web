@@ -1,8 +1,21 @@
-import { Building, ChevronDown, LogOut } from "lucide-react";
-import { Button } from "./ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import { Building, ChevronDown, LogOut } from "lucide-react"
+import { Button } from "./ui/button"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu"
+import { useQuery } from "@tanstack/react-query"
+import { getManagedRestaurant } from "@/api/get-managed-restaurant"
+import { getProfile } from "@/api/get-profile"
 
 export function AccountMenu() {
+  const { data: profile } = useQuery({
+    queryKey: ["profile"],
+    queryFn: getProfile,
+  })
+
+  const { data: managedRestaurant } = useQuery({
+    queryKey: ["managed-restaurant"],
+    queryFn: getManagedRestaurant,
+  })
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -10,15 +23,15 @@ export function AccountMenu() {
           variant="outline"
           className="flex select-none items-center gap-2"
         >
-          Pizza Shop
+          {managedRestaurant?.name}
           <ChevronDown className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="end" className="w-56">
         <DropdownMenuLabel className="flex flex-col">
-          <span>John Dow</span>
-          <span className="text-xs font-normal text-muted-foreground">johndoe@domain.com</span>
+          <span>{profile?.name}</span>
+          <span className="text-xs font-normal text-muted-foreground">{profile?.email}</span>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
