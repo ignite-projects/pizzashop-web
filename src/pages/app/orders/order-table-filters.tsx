@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search, X } from "lucide-react";
 
-export function OrdersTableFilter() {
+export function OrdersTableFilters() {
   return (
     <form className="flex items-center gap-2">
       <span className="text-sm font-semibold">Filtros:</span>
